@@ -1,0 +1,1 @@
+<?phpclass categoryController{		public function showCategory()	{		$cat = intval ($_GET['cat']);		 		$category = new CategoryModel();        $category->load($cat);		$category->getRelatedCategories();		$category->menuFotoProductÑurrentCategory();				$view = new CategoryView();        $view->setCategory($category);        $view->renderHtml();	}}
