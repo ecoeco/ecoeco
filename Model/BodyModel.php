@@ -4,7 +4,7 @@ class BodyModel
 {
 	public $_dataBody;
 	function load()
-	{
+	{	
 		if (isset($_GET['id']) && !isset($_POST['AdminEnter'])) {
 			$productShow = new productController();
 			$productShow->showProduct();
@@ -13,10 +13,32 @@ class BodyModel
 			$categoryShow = new CategoryController();
 			$categoryShow->showCategory();
 		}
-		elseif (!isset($_POST['AdminEnter'])) {
-			$groupShow = new GroupController();
-			$groupShow->showGroup();
+		
+		elseif (isset($_GET['action'])) {
+			if ($_GET['action']=='forum') {
+				//	Forum
+				require_once 'comments/demo.php';
+			}
+			elseif ($_GET['action']=='quote') {
+				//	quote
+				require_once 'templates/Quote/quote.php';
+			}
+			elseif ($_GET['action']=='registration'){
+				//	registration
+				require_once 'templates/Registration/registration.php';
+			}
+			elseif ($_GET['action']=='feedback'){
+				//	test
+				require_once 'templates/Feedback/feedback.php';
+			}
+			else{
+				$groupShow = new GroupController();
+				$groupShow->showGroup();
+			}
+			
 		}
+		
+		
 		/*elseif (isset($_GET['edit_id']) && !isset($_POST['AdminEnter'])) {
 			$_GET['edit_id'] = mysql_real_escape_string ($_GET['edit_id']);
 			show_group($_GET['edit_id']);
@@ -64,10 +86,14 @@ class BodyModel
 		elseif (isset($_POST['AddCategoryNewCat'])) {
 			$_POST['AddCategoryNewCat'] = mysql_real_escape_string ($_POST['AddCategoryNewCat']);
 			edit_cat ($_POST['AddCategoryNewCat']); 
-			
 			}
+		elseif (!isset($_POST['AdminEnter']) && !isset($_POST['AdminEnter'])) {
+			$groupShow = new GroupController();
+			$groupShow->showGroup();
+		}
 		else {
-		   // require_once 'templates/catalog_group.php';
+		   $groupShow = new GroupController();
+			$groupShow->showGroup();
 		}
 		
 	}

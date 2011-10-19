@@ -1,12 +1,14 @@
 <?php
 function autoloadMyClasses($className)
 {
+	
 	$possibilities = array( 
 		//'beans'.'/'.$className.'.php', 
 		'Controllers'.'/'.$className.'.php', 
 		//'libraries'.'/'.$className.'.php', 
 		'Model'.'/'.$className.'.php', 
-		'Views'.'/'.$className.'.php', 
+		'Views'.'/'.$className.'.php',
+		'comments'.'/'.$className.'.class.php',
 		$className.'.php' 
 	); 
 	
@@ -14,7 +16,7 @@ function autoloadMyClasses($className)
 		if (file_exists($file)) { 
 			require_once($file); 
 			return true; 
-		} 
+		}
 	} 
 	return false; 
 }

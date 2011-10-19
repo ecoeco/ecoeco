@@ -3,7 +3,7 @@
 // Error reporting:
 error_reporting(E_ALL^E_NOTICE);
 
-include "../config.php";
+//include "../config.php";
 include "comment.class.php";
 
 /*

@@ -26,7 +26,14 @@
 					<a href="index.php">На главную</a>
 				</li>
 				<li>
-					<a href="comments.php">Форум</a>
+					<li>
+					<a href="index.php?action=forum">Форум</a>
+					</li>
+				</li>
+				<li>
+					<li>
+					<a href="index.php?action=feedback">Обратная связь</a>
+					</li>
 				</li>
             </ul>
         </div>
@@ -36,7 +43,7 @@
 			</div>
 			<?php unset($_SESSION['msg']) ; ?>
 			<?php if ($header['number'] > 0) : ?>
-				<a  href="quote.php" style="font-size: 8pt; font-family: Arial, sans-serif; color: White"><?php echo 'В Корзине ' . $header['number'] . ' товара на ' . $header['total_sum'] . ' €' ; ?></a>
+				<a  href="index.php?action=quote" style="font-size: 8pt; font-family: Arial, sans-serif; color: White"><?= 'В Корзине ' . $header['number'] . ' товара на ' . $header['total_sum'] . ' €' ; ?></a>
 			<?php elseif ($header['number'] <= 0) : ?>
 				<a  href="quote.php" style="font-size: 8pt; font-family: Arial, sans-serif; color: White">Корзина пуста</a>
 			<?php endif ?>

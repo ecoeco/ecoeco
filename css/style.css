@@ -303,7 +303,7 @@ A:hover {
 	font-size: 10pt; /* Размер названий в пункте меню */
 	color: #666;
 	padding: 10px;
-	margin-left: 540px;
+	margin-left: 340px;
 	width: 450px;
 }
 #reg p{
@@ -349,8 +349,8 @@ A:hover {
 #quote{
 	margin-top: 30px;
 	max-width: 875px;
-	margin-left: 160px;
-	padding-left: 50px;
+	/*margin-left: 160px;*/
+	padding-left: 20px;
 }
 #quote table{
 	font-family: Arial, sans-serif; /* Рубленый шрифт для текста меню */

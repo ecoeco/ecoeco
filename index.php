@@ -1,10 +1,6 @@
 <?php
 
-require_once 'Controllers/app.php';
+require_once 'templates/autoload.php';
 
 $app = new App();
 $app->bootstrap();
-
-//$app->setController('LogUsers');
-//$app->run();
-?>

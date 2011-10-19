@@ -5,33 +5,48 @@
 		</li>
 	</ul>
 	<ul id="nav2">
-	<?php $i=1;
-		$k=1;
-		$n=1;  // $menu['group'][$i]['category'][$k]['product'][$n] ?>
-		<? //var_dump($menu['group']); die;?>
-		<? //var_dump($menu['group'][$i]['category'][$k]['product']); die;?>
-	<?php foreach($menu['group'] as $group) : ?>
+	<?php $result_gp = mysql_query('SELECT id_group, name FROM catalog_groups');
+	while ($group = mysql_fetch_array($result_gp)):?>
+	<?php 
+		foreach($group as &$value) 
+			{
+				$value = htmlspecialchars ($value);
+			}
+		?>
 		<li>
-			<a  href="index.php?gp=<?= $group['id_group']; ?>"><?= $group['name']; ?></a>
-			<ul><? //var_dump($group['id_group']); die;?>
-				<?php foreach($menu['group'][$i]['category'] as $category) : ?>
+			<a  href="index.php?gp=<?php echo $group['id_group']; ?>"><?php echo $group['name']; ?></a>
+			<ul>
+				<?php $group['id_group']= intval($group['id_group']);?>
+				<?php $result = mysql_query(sprintf('SELECT id_category, name FROM catalog_category WHERE group_id = %d', $group['id_group'])); ?>
+				<?php while ($category = mysql_fetch_array($result)): ?>
+				<?php 
+					foreach($category as &$value) 
+						{
+							$value = htmlspecialchars ($value);
+						}
+					?>
 					<li>
-						<a class="brd" href="index.php?cat=<?= $category['id_category']; ?> "><?= $category['name']; ?></a>
+						<a class="brd" href="index.php?cat=<?php echo $category['id_category']; ?> "><?php echo $category['name']; ?></a>
 						<ul>
-						<? //var_dump($category); die;?>
-							<?php foreach($menu['group'][$i]['category'][$k]['product'] as $product) : ?>
-								<li><? //var_dump($menu['group'][$i]['category'][$k]['product']); die;?>
-									<a class="brd" href="index.php?id=<?= $product['id_product'] ?>"> <?= $product['name'] ?></a>
+							<?php $category['id_category']= intval ($category['id_category']);?>
+							<?php $result_cat = mysql_query(sprintf('SELECT id_product, name, id_category FROM catalog_product WHERE id_category = %d', $category['id_category'])); ?>
+							<?php while ($product = mysql_fetch_array($result_cat)): ?>
+								<?php 
+								foreach($product as &$value) 
+									{
+										$value = htmlspecialchars ($value);
+									}
+								?>
+								<li>
+									<a class="brd" href="index.php?id=<?= $product['id_product'];?>"> <?= $product['name']; ?></a>
 								</li>
-								<?php $k++ ?>
-							<?php endforeach; ?>
+							<?php endwhile; ?>
 						</ul>
 					</li>
-					<?php $i++ ?>
-				<?php endforeach; ?>
+				<?php endwhile; ?>
 			</ul>
 		</li>
-		<?php //$i++ ?>
-	<?php  endforeach; ?>
+	<?php endwhile; ?>
 	</ul>
+<a href="admin.php">.</a>
 </div>

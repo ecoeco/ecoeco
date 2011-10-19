@@ -355,7 +355,7 @@ function check_user ()
 		
 	}
 }
-
+/*
 function getRealIpAddr()
 {
   if (!empty($_SERVER['HTTP_CLIENT_IP']))
@@ -371,4 +371,4 @@ function getRealIpAddr()
     $ip=$_SERVER['REMOTE_ADDR'];
   }
   return $ip;
-}	
+}*/	

@@ -7,8 +7,8 @@ class headerController
 		switch($_SERVER['SERVER_NAME']) 
 		{ 
 		case 'localhost': 
-			//$log = new LogModel();
-			//$log->run();
+			$log = new LogModel();
+			$log->run();
 		break; 
 		case 'ecoeco.elitno.net':
 			$log = new LogModel();

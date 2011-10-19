@@ -1,14 +1,4 @@
 <?php
-/*
-$ConnectionDB->OpenConnection();
-
-$log= new LogUsers();
-$log->writingLog ();
-
-include_once 'Module/DBModule.php';
-
-*/
-	
 class App
 {
 	function __construct ()
@@ -17,8 +7,6 @@ class App
 	
 	function bootstrap()
 	{
-		require_once 'templates/autoload.php';
-		//require_once 'Model/LogModel.php';
 		require_once 'Model/ConnectionDBModel.php';
 		require_once 'functions.php';
 		require_once 'auth_.php';
@@ -26,8 +14,6 @@ class App
 		$header->showheader();
 		$menu = new menuController;
 		$menu->showmenu();
-		//require_once 'Views/left_menu.php';
-		require_once 'Views/right_menu.php';
 		echo '<div id="body">';
 			$body = new bodyController;
 			$body->showBody();

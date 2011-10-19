@@ -39,7 +39,7 @@ foreach($comments as $c){
 		{
 			
 			$result = mysql_query(sprintf("SELECT login, mail
-			FROM  users WHERE login = '%s'", $_SESSION['username']) )or die("Invalid query: " . mysql_error());
+			FROM  users WHERE login = '%s'", $_SESSION['username']) ) or die("Invalid query: " . mysql_error());
 			while ($users = mysql_fetch_array($result))
 			{
 				foreach($users as &$value) 
@@ -49,9 +49,9 @@ foreach($comments as $c){
 				?>
 				<div>
 				<label for="name">Имя</label>
-				<input type="hidden" name="name" id="name" value="<?php echo $users['login'];?>"/>
+				<input type="hidden" name="name" id="name" value="<?= $users['login'];?>"/>
 				<label for="email">E-mail</label>
-				<input type="hidden" name="email" id="email" value="<?php echo $users['mail'];?>"/>
+				<input type="hidden" name="email" id="email" value="<?= $users['mail'];?>"/>
 					
 			<?php	
 			}?>
@@ -90,8 +90,6 @@ foreach($comments as $c){
 		?>
     </form>
 </div>
-
 </div>
-
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 <script type="text/javascript" src="comments/script.js"></script>

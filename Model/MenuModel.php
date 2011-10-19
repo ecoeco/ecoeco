@@ -7,7 +7,7 @@ class MenuModel
 	function load()
 	{	
 		
-		echo getcwd();
+		//echo getcwd();
 		$i=1;
 		$k=1;
 		$n=1;
@@ -37,7 +37,7 @@ class MenuModel
 				}
 			}
 			$k++;
-		}	var_dump ($menu); die;	
+		}	//var_dump ($menu); die;	
 		$result_cat = mysql_query(sprintf('SELECT id_product, id_category, name, id_category FROM catalog_product WHERE id_category = %d ', $menu['group'][$i]['category'][$k]['group_id'])) or die("Invalid query: " . mysql_error());
 		while ($menu['product'][$n] = mysql_fetch_array($result_cat))
 		{

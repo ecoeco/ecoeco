@@ -5,7 +5,7 @@ class ConnectionDBModel
 	protected $server; 
 	private $username; 
 	private $password;
-	private $dbname;
+	public $dbname;
 
 	function __construct ($server, $username, $password, $dbname)
 	{
