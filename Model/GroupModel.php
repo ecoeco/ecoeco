@@ -28,7 +28,9 @@ class GroupModel
 	function getRelatedGroup ()
 		{
 			$result_group = mysql_query('SELECT * FROM catalog_groups' ) or die("Invalid query: " . mysql_error());
-			while ($gp['RelatedGroup'][] = mysql_fetch_array($result_group))
+			$gp['number'] = mysql_num_rows($result_group);
+			$i=1;
+			while ($gp['RelatedGroup'][] = mysql_fetch_array($result_group) and $i<$gp['number'])
 			{
 				foreach($gp['RelatedGroup'] as $id) 
 					{
@@ -37,6 +39,7 @@ class GroupModel
 							$prod = htmlspecialchars ($prod);
 						}
 					}
+				$i++;
 			} 
 			$this->_dataGp = $this->_dataGp + $gp;
 			return $this;
@@ -52,15 +55,18 @@ class GroupModel
 	function menuFotoProductÑurrentGroup ()
 		{
 			$result_cat = mysql_query(sprintf('SELECT id_category, group_id, name, img FROM catalog_category WHERE group_id = %d', $this->_dataGp['title']['id_group']))or die("Invalid query: " . mysql_error());
-			while ($img['foto'][] = mysql_fetch_array($result_cat))
+			$img['number'] = mysql_num_rows($result_cat);
+			$i=1;
+			while ($img['foto'][] = mysql_fetch_array($result_cat) and $i<$img['number'])
 			{
 				foreach($img['foto'] as $id) 
+					{
+						foreach($id as $prod) 
 						{
-							foreach($id as $prod) 
-							{
-								$prod = htmlspecialchars ($prod);
-							}
+							$prod = htmlspecialchars ($prod);
 						}
+					}
+				$i++;
 			}
 			$this->_dataGp = $this->_dataGp + $img;
 			return $this;

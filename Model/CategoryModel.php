@@ -64,16 +64,19 @@ class CategoryModel
 	function menuFotoProductÑurrentCategory ()
 		{
 			$result = mysql_query(sprintf('SELECT id_product, name, img_big, img_small_cat FROM catalog_product WHERE id_category = %d', $this->_dataCat['title']['id_category'])) or die("Invalid query: " . mysql_error());
-			while ($product['product'][] = mysql_fetch_array($result))
+			$product['number'] = mysql_num_rows($result);
+			$i=1;
+			while ($product['product'][$i] = mysql_fetch_array($result) and $i<$product['number'])
 			{
 				foreach($product['product'] as $id) 
+					{
+						foreach($id as $prod) 
 						{
-							foreach($id as $prod) 
-							{
-								$prod = htmlspecialchars ($prod);
-							}
+							$prod = htmlspecialchars ($prod);
 						}
-			}
+					}
+				$i++;
+			} 
 			$this->_dataCat = $this->_dataCat + $product;
 			return $this;
 		}

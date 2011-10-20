@@ -264,7 +264,7 @@ class ProductModel
 		$ral['ral']['1'] = '<p class="mat" style="background-color:#fff;height:18px;padding-top:2px;padding-left:2px;padding-right:2px;color:#000;border: 1px solid #000">Белый RAL 9016</p>
 			<p class="mat" style="background-color:#b2b3b5">Серый RAL 9006</p>
 			<p class="mat" style="background-color:#42290a">Корич. RAL 8014</p>';
-		
+		$ral['ral']['0'] = '';
 		$rals['ral'] = $ral['ral'][intval($this->_data['img_ral'])];
 		$this->_data = $this->_data + $rals;
 		return $this;
@@ -344,6 +344,9 @@ class ProductModel
 				<option value="Серый RAL 9006">Серый RAL 9006</option>
 				<option value="Коричневый RAL 8014">Коричневый RAL 8014</option>
 			</select>';
+		}else
+		{
+			$rals['select_color']= '';
 		}
 		$this->_data = $this->_data + $rals;
 		return $this;
