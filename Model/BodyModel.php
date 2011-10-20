@@ -21,7 +21,9 @@ class BodyModel
 			}
 			elseif ($_GET['action']=='quote') {
 				//	quote
-				require_once 'templates/Quote/quote.php';
+				$quoteShow = new QuoteController();
+				$quoteShow->showQuote();
+				//require_once 'templates/Quote/quote.php';
 			}
 			elseif ($_GET['action']=='registration'){
 				//	registration

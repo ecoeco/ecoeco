@@ -264,73 +264,8 @@ function edit_cat ($id)
 		}
 	}
 }
-/*function get_users($login)
-{
-	$login = mysql_real_escape_string ($login);
-    $result = mysql_query(sprintf('SELECT id_user, login, password, activ FROM users WHERE login = %d', $login));
-    $user = mysql_fetch_array($result);
-	
-	echo $user ['activ'];
-}*/
 
 
-
-
-// Печать выбранного RAL в quote.php
-function print_ral_quote($color)
-{
-	if ($color == 'Белый RAL 9016')
-	{
-	 ?>
-	<li>
-		<p class="mat" style="background-color:#fff;height:18px;padding-top:2px;padding-left:2px;padding-right:2px;color:#000;border: 1px solid #000">Белый RAL 9016</p>
-	</li>
-	<?php
-	}
-	elseif ($color == 'Серый RAL 9006')
-	{
-	 ?>
-	<li>
-	 	<p class="mat" style="background-color:#b2b3b5">Серый RAL 9006</p>
-	</li>
-	<?php
-	}
-	elseif ($color == 'Коричневый RAL 8014')
-	{
-	 ?>
-	<li>
-		<p class="mat" style="background-color:#42290a">Корич. RAL 8014</p>
-	</li>
-	<?php
-	}
-	elseif ($color == 'Черный RAL 9005')
-	{
-	  ?>
-	<li>
-		<p class="mat" style="background-color:#000000">Черный RAL 9005</p>
-	</li>
-	<?php
-	}
-	elseif ($color == 'Нерж. мат')
-	{
-	?>
-	<li>
-		<p class="mat" style="background-color:#8b929a">Нерж. мат</p>
-	</li>
-	<?php
-	}
-	elseif ($color == 'Нерж. полиров.')
-	{
-	 ?>
-	<li>
-		<p class="mat" style="background-color:#8b929a">Нерж. полиров.</p>
-	</li>
-	<?php
-	}
-	else
-	{
-	}
-}
 function check_user ()
 {
 	if (isset($_POST['check_user']) && isset ($_POST['username_reg']))
@@ -355,20 +290,3 @@ function check_user ()
 		
 	}
 }
-/*
-function getRealIpAddr()
-{
-  if (!empty($_SERVER['HTTP_CLIENT_IP']))
-  {
-    $ip=$_SERVER['HTTP_CLIENT_IP'];
-  }
-  elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR']))
-  {
-    $ip=$_SERVER['HTTP_X_FORWARDED_FOR'];
-  }
-  else
-  {
-    $ip=$_SERVER['REMOTE_ADDR'];
-  }
-  return $ip;
-}*/	

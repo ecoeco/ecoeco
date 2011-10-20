@@ -26,7 +26,7 @@
 	<div id="catalog_img">
 		<?php foreach($category['product'] as $product) : ?>
 		<li>
-			<a href="index.php?id=<?php echo $product['id_product'];?>">
+			<a href="index.php?id=<?= $product['id_product'];?>">
 				<img src="<?= $product['img_small_cat']; ?>" title="ECO Schulte <?= $product['name']; ?>" alt="<?= $product['name'] ?>" />					
 			</a>
 			</br>

@@ -7,12 +7,31 @@ class ConnectionDBModel
 	private $password;
 	public $dbname;
 
-	function __construct ($server, $username, $password, $dbname)
+	function __construct (/*$server, $username, $password, $dbname*/)
 	{
-		$this->server = $server;
+		/*$this->server = $server;
 		$this->username = $username;
 		$this->password = $password;
 		$this->dbname = $dbname;
+		return $this;*/
+		
+		switch($_SERVER['SERVER_NAME']) 
+		 { 
+		 case 'localhost': 
+			$this->server=$server = 'localhost'; 
+			$this->username = $username = 'root'; 
+			$this->password = $password = '';
+			$this->dbname = $dbname = 'test';
+			//$link = mysql_connect($server, $username, $password);
+		   break; 
+		 case 'ecoeco.elitno.net': 
+			$this->server = $server = 'localhost'; 
+			$this->username = $username = 'ecoeco'; 
+			$this->password = $password = '123ewq';
+			$this->dbname = $dbname = 'ecoeco';
+			//$link = mysql_connect($server, $username, $password);
+		   break; 
+		 }
 	}
 	
 	function OpenConnection()
@@ -39,6 +58,7 @@ class ConnectionDBModel
 	}
 
 }
+/*
 switch($_SERVER['SERVER_NAME']) 
 	{ 
 	case 'localhost': 
@@ -50,3 +70,28 @@ switch($_SERVER['SERVER_NAME'])
 		$Controller->OpenConnection();
 	   break; 
 	}
+	
+	
+	
+switch($_SERVER['SERVER_NAME']) 
+ { 
+ case 'localhost': 
+	$server = 'localhost'; 
+	$username = 'root'; 
+	$password = '';
+	$dbname = 'test';
+	$link = mysql_connect($server, $username, $password);
+   break; 
+ case 'ecoeco.elitno.net': 
+	$server = 'localhost'; 
+	$username = 'ecoeco'; 
+	$password = '123ewq';
+	$dbname = 'ecoeco';
+	$link = mysql_connect($server, $username, $password);
+   break; 
+ }
+$Controller = new ConnectionDBModel ($server, $username, $password, $dbname);
+$Controller->OpenConnection();*/
+
+$Controller = new ConnectionDBModel ();
+$Controller->OpenConnection();
