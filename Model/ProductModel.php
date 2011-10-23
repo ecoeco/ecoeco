@@ -56,6 +56,13 @@ class ProductModel
 	// Печать блока RAL в templates\Product\view.php
 	function printRalProduct()
 	{ 
+		// Пока есть номера в базе но нет описания к продукту
+		$i=23;
+		while ( $i++<60 )
+		{
+			$ral['ral'][$i] = '<p></p>';
+		}
+		//////////////////////
 		$ral['ral']['23'] = '<img src="img_small/product/norms/feuer.jpg" title="" alt="feuer" height="25" />
 			<img src="img_small/product/norms/en_1125.jpg" title="EN 1125 FOR PANIC LOCKS WITH HORIZONTAL OPERATING RODS. Panic door locks are especially used where there are people that are not familiar with the place and panic situations may arise, i.e. in buildings that are open to the public. Undoubtedly, EN 1125 contributes most effectively to the protection of human life in emergencies and panic situations." alt="en_1125" height="25" />
 			<div >
@@ -264,7 +271,8 @@ class ProductModel
 		$ral['ral']['1'] = '<p class="mat" style="background-color:#fff;height:18px;padding-top:2px;padding-left:2px;padding-right:2px;color:#000;border: 1px solid #000">Белый RAL 9016</p>
 			<p class="mat" style="background-color:#b2b3b5">Серый RAL 9006</p>
 			<p class="mat" style="background-color:#42290a">Корич. RAL 8014</p>';
-		$ral['ral']['0'] = '';
+		$ral['ral']['0'] = '<p></p>';
+		
 		$rals['ral'] = $ral['ral'][intval($this->_data['img_ral'])];
 		$this->_data = $this->_data + $rals;
 		return $this;
@@ -346,7 +354,7 @@ class ProductModel
 			</select>';
 		}else
 		{
-			$rals['select_color']= '';
+			$rals['select_color']= '<p></p>';
 		}
 		$this->_data = $this->_data + $rals;
 		return $this;

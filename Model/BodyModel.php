@@ -94,7 +94,7 @@ class BodyModel
 			$groupShow->showGroup();
 		}
 		else {
-		   $groupShow = new GroupController();
+			$groupShow = new GroupController();
 			$groupShow->showGroup();
 		}
 		

@@ -1,4 +1,3 @@
-<div id="footer">FOOTER</div>
-
+	<div id="footer">FOOTER</div>
 </body>
 </html>

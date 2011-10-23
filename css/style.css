@@ -288,13 +288,16 @@ A:hover {
 	
 	
  }
+#prefooter{
+	background-image: url(../img/footshadow.png);
+}
 #footer {
     padding: 10px;
     height: 37px;
 	min-width: 800px;
     width: 100%;
-    background: #B9CC8A;
-    clear: both;
+	background: #B9CC8A;    
+	clear: both;
     float: left;
     
 }
