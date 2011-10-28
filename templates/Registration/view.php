@@ -1,3 +1,4 @@
+<title>ECO Schulte Registration</title>
 <div id="reg">
 <?php if (isset($_SESSION['username'])):?>
 
@@ -15,8 +16,10 @@
 					type="submit" name="check_user" ><img src="img/check_user.png"  alt="Обновить"/>
 				</button>
 				Проверить пользователя.
-				</br>	
-				<?php check_user () ?>
+				</br>
+				<?php if(isset($reg['message'])) :?>
+					<?= $reg['message'] ?>
+				<?php endif?>
 			</div>
 			</p>
 			<p>E-mail</br><input type="text" name="e_mail_reg" /></p>

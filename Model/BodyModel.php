@@ -10,7 +10,7 @@ class BodyModel
 			$productShow->showProduct();
 		}
 		elseif (isset($_GET['cat']) && !isset($_POST['AdminEnter'])) {
-			$categoryShow = new CategoryController();
+			$categoryShow = new categoryController();
 			$categoryShow->showCategory();
 		}
 		
@@ -21,20 +21,27 @@ class BodyModel
 			}
 			elseif ($_GET['action']=='quote') {
 				//	quote
-				$quoteShow = new QuoteController();
+				$quoteShow = new quoteController();
 				$quoteShow->showQuote();
 				//require_once 'templates/Quote/quote.php';
 			}
 			elseif ($_GET['action']=='registration'){
 				//	registration
-				require_once 'templates/Registration/registration.php';
+				//require_once 'templates/Registration/registration.php';
+				$registrationShow = new registrationController();
+				$registrationShow->showRegistration();
 			}
 			elseif ($_GET['action']=='feedback'){
 				//	test
 				require_once 'templates/Feedback/feedback.php';
 			}
 			else{
-				$groupShow = new GroupController();
+				unset ($_GET);
+				unset ($_POST);?>
+				<script language=javascript>
+					setTimeout("location.href='index.php'", 0);
+				</script>
+				<?php $groupShow = new groupController();
 				$groupShow->showGroup();
 			}
 			
@@ -90,11 +97,14 @@ class BodyModel
 			edit_cat ($_POST['AddCategoryNewCat']); 
 			}
 		elseif (!isset($_POST['AdminEnter']) && !isset($_POST['AdminEnter'])) {
-			$groupShow = new GroupController();
+			$groupShow = new groupController();
 			$groupShow->showGroup();
 		}
 		else {
-			$groupShow = new GroupController();
+			unset ($_GET);
+			unset ($_POST);
+			
+			$groupShow = new groupController();
 			$groupShow->showGroup();
 		}
 		

@@ -109,7 +109,8 @@ class QuoteModel
     }
 	
 	
-	function processingUpdatesQuote () {
+	function processingUpdatesQuote () 
+	{
 		if(!isset($_SESSION['username']))
 		{
 			$_SESSION['msg'] = 'Вы не залогинены'; die;
@@ -119,7 +120,9 @@ class QuoteModel
 			foreach($_POST['item'] as $key_quote => $item) 
 			{
 				$key_quote = intval($key_quote);
+				var_dump($item);
 				$item["'color'"] = mysql_real_escape_string ($item["'color'"]);
+				
 				$item["'qty'"] = intval($item["'qty'"]);
 				
 					$sql=sprintf(
@@ -199,7 +202,7 @@ class QuoteModel
 
 		$update_quote_quote_item = mysql_query(sprintf("UPDATE quote_item SET date_order ='%s' WHERE id_quote=%d", $d, $id_quote)) or die("Invalid query: " . mysql_error());
 	}
-	public function getDataQuote()
+	public function getData()
     {
         return $this->_dataQuote;
     }

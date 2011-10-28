@@ -16,7 +16,7 @@ class quoteController
 		
 		
         $view = new QuoteView();
-        $view->setQuote($quote);
+        $view->set($quote);
         $view->renderHtml();
     }
 }

@@ -17,13 +17,14 @@ class headerController
 		}
 		
 		$header = new HeaderModel();
+		
 		if (isset ($_SESSION['username']))
 		{
 			$header->checkQuote();
 		}
 		
 		$view = new HeaderView();
-        $view->setHeader($header);
+        $view->set($header);
         $view->renderHtml();
 	}
 	

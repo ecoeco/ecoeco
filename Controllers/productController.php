@@ -13,7 +13,7 @@ class productController
 		//var_dump($_SERVER); die;
 		
         $view = new ProductView();
-        $view->setProduct($product);
+        $view->set($product);
         $view->renderHtml();
     }
 }

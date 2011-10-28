@@ -24,6 +24,10 @@ class CreateQuoteModel
 		$d = date('Y-m-d');
 		$product['price'] = intval($product['price']);
 		$_POST['qty'] = intval($_POST['qty']);
+		if ($_POST['qty']<=0)
+		{
+			return false;
+		}
 		$_SESSION['username'] = mysql_real_escape_string ($_SESSION['username']);
 		$total = $product['price'] * $_POST['qty'];
 

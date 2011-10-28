@@ -18,7 +18,7 @@
 	</ul>
 </div>
 </br>
-<div id="info_int" align="center"><b>ECO Schulte <?php echo $group['title']['name']; ?></b></div>
+<div id="info_int" align="center"><b>ECO Schulte <?= $group['title']['name']; ?></b></div>
 <?php
 //
 // артинки продуктов в текущей категории
@@ -27,7 +27,7 @@
 	<div id="catalog_img">
 		<?php foreach($group['foto'] as $product) : ?>
 		<li>
-			<a href="index.php?cat=<?php echo $product['id_category'];?>">
+			<a href="index.php?cat=<?= $product['id_category'];?>">
 				<img src="<?= $product['img']; ?>" title="ECO Schulte <?= $product['name']; ?>" alt="<?= $product['name'] ?>" />					
 			</a>
 			</br>

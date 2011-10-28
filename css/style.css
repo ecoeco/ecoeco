@@ -68,7 +68,6 @@ A:hover {
     color: black;
 }
 #menu_catalog {
-	font-family: Arial, sans-serif;
     font-size: 8pt;
     min-height:50px;
 	color: White;
@@ -96,9 +95,7 @@ A:hover {
 #logo {
     float: right;
 }
-#catalog_img Li{
-	
-}
+
 #door_closer_img{
 
 }
@@ -137,7 +134,6 @@ A:hover {
 	margin-left: 25px;
 	/*margin-right: 25px;*/
 	margin-top: 10px;
-	font-family: Arial, sans-serif;
     font-size: 8pt;
 	color: #666;
     list-style-type: none;
@@ -147,7 +143,12 @@ A:hover {
 #catalog_img LI A {
     text-decoration: none;
     color: #666;
-   
+}
+#catalog_img img:hover{
+	/*box-shadow: inset 0 0 26px;*/
+	box-shadow: 0px 0px 15px -5px;
+	-webkit-box-shadow:  0 0 5px rgba(0,0,0,0.5); /* Для Safari и Chrome */
+	-moz-box-shadow:  0 0 -5px rgba(0,0,0,0.5); /* Для Firefox */
 }
 #gallery{
 	margin-left: 25px;
@@ -161,29 +162,38 @@ A:hover {
 	height: 100%;
     width: 150px;
     float: left;
-    background: #B5B5B5;
+	background: #B5B5B5;
+	background: -o-linear-gradient(top, #B5B5B5, #fefefe); /* Opera 11.10+ */
+    background: linear-gradient(top, #B5B5B5, #fefefe); /* CSS3 */ 
+	background: -moz-linear-gradient(top, #B5B5B5, #fefefe); /* Firefox 3.6+ *//* Chrome 1-9, Safari 4-5 */
+    background: -webkit-gradient(linear, left top, left bottom, 
+                color-stop(0%,#B5B5B5), color-stop(100%,#fefefe)); /* Chrome 10+, Safari 5.1+ */
+	
 	z-index: 2;
 }
 #right_menu {
-	font-family: Arial, sans-serif;
     font-size: 8pt;
     padding: 10px;
     min-height: 400px;
-	max-height: 700px;
+	/*max-height: 700px;*/
 	height: 100%;
     width: 150px;
     float: right;
-    background: #B5B5B5;
+	background: #B5B5B5;
+    background: -o-linear-gradient(top, #B5B5B5, #fefefe); /* Opera 11.10+ */
+    background: linear-gradient(top, #B5B5B5, #fefefe); /* CSS3 */ 
+	background: -moz-linear-gradient(top, #B5B5B5, #fefefe); /* Firefox 3.6+ *//* Chrome 1-9, Safari 4-5 */
+    background: -webkit-gradient(linear, left top, left bottom, 
+                color-stop(0%,#B5B5B5), color-stop(100%,#fefefe)); /* Chrome 10+, Safari 5.1+ */
+	
 }
 #print_session_msg {
-	font-family: Arial, sans-serif;
 	font-size: 9pt;
 	text-align: center;
 	color: red;
 	text-decoration:blink;
 }
 #login {
-	font-family: Arial, sans-serif;
 	font-size: 12pt;
 	text-align: center;
 	color: black;
@@ -195,7 +205,6 @@ A:hover {
 
 #registration  {
 	text-decoration: none; /* Подчеркивание у ссылок убираем */
-	font-family: Arial, sans-serif;
     font-size: 10pt;
 	text-align: center;
 	margin-top: 25px;
@@ -203,7 +212,6 @@ A:hover {
 
 #registration A{
 	text-decoration: none; /* Подчеркивание у ссылок убираем */
-	font-family: Arial, sans-serif;
     font-size: 14pt;
 	text-align: center;
 	color: black;
@@ -211,7 +219,6 @@ A:hover {
 }
 #registration A:hover{
 	text-decoration: none; /* Подчеркивание у ссылок убираем */
-	font-family: Arial, sans-serif;
     font-size: 14pt;
 	text-align: center;
 	color: red;
@@ -249,14 +256,12 @@ A:hover {
 	max-height: 100px;
 	min-height: 40px;
 	padding-bottom: 10px; /* Нижнее поле вокруг надписи */
-	font-family: Arial, sans-serif;
 	font-size: 10pt;
 	
 	/*height: 80px;*/
 }
 
 #product_menu li{
-	font-family: "Arial", sans-serif;
 	font-size: 8pt;
 	padding: 0;
 	margin-bottom: 0px;
@@ -292,7 +297,10 @@ A:hover {
 	background-image: url(../img/footshadow.png);
 }
 #footer {
-    padding: 10px;
+    padding-bottom: 10px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 10px;
     height: 37px;
 	min-width: 800px;
     width: 100%;
@@ -302,7 +310,6 @@ A:hover {
     
 }
 #reg{
-	font-family: Arial, sans-serif; /* Рубленый шрифт для текста меню */
 	font-size: 10pt; /* Размер названий в пункте меню */
 	color: #666;
 	padding: 10px;
@@ -310,12 +317,10 @@ A:hover {
 	width: 450px;
 }
 #reg p{
-	font-family: Arial, sans-serif; /* Рубленый шрифт для текста меню */
 	font-size: 10pt; /* Размер названий в пункте меню */
 	color: #666;
 }
 #check_user{
-	font-family: Arial, sans-serif; /* Рубленый шрифт для текста меню */
 	font-size: 10pt; /* Размер названий в пункте меню */
 	color: #666;
 	width: 350px;
@@ -326,7 +331,6 @@ A:hover {
 	
 }
 #quote_ral{
-	font-family: Arial, sans-serif; /* Рубленый шрифт для текста меню */
 	font-size: 18pt; /* Размер названий в пункте меню */
 	list-style: none; 
 	height: 30px;
@@ -356,7 +360,6 @@ A:hover {
 	padding-left: 20px;
 }
 #quote table{
-	font-family: Arial, sans-serif; /* Рубленый шрифт для текста меню */
 	font-size: 10pt; /* Размер названий в пункте меню */
 	color: #666;
 	border-bottom-style: outset;
@@ -392,7 +395,6 @@ A:hover {
 #total_order{
 	margin-top: 20px;
 	text-align: left;
-	font-family: Arial, sans-serif; /* Рубленый шрифт для текста меню */
 	font-size: 14pt; /* Размер названий в пункте меню */
 	color: red;
 	width: 300px;
@@ -407,7 +409,6 @@ A:hover {
 }
 /*----------------------------------------------*/
 #product_img {
-	font-family: Arial, sans-serif; /* Рубленый шрифт для текста меню */
 	font-size: 18pt; /* Размер названий в пункте меню */
 	list-style: none; 
 	min-height: 400px;
@@ -437,7 +438,6 @@ A:hover {
     padding-right: 20px;
  }
 #product_img_price{
-	font-family: Arial, sans-serif; /* Рубленый шрифт для текста меню */
 	font-size: 20pt; /* Размер названий в пункте меню */
 	float: left;
 	color: #0ac30a;
@@ -455,12 +455,38 @@ A:hover {
 	margin-bottom: 5px;
 	margin-top: 5px;
 }
+#product_img_color input{
+	box-shadow: 0.2em 0.2em 5px rgba(122,122,122,0.5);
+	-webkit-box-shadow:   0.2em 0.2em 5px rgba(122,122,122,0.5); /* Для Safari и Chrome */
+	-moz-box-shadow:  0.2em 0.2em 5px rgba(122,122,122,0.5); /* Для Firefox */
+	background: rgb(70, 229, 34) ;
+    background: -moz-linear-gradient(top, rgb(167, 226, 176) 0px, rgb(0, 186, 0) 50%, rgb(0, 134, 0) 51%, rgb(60, 223, 25) 85%, rgb(70, 229, 34) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(167, 226, 176)), 
+                color-stop(50%,rgb(0, 186, 0)), color-stop(51%,rgb(0, 134, 0)),  color-stop(85%,rgb(60, 223, 25)),color-stop(100%,rgb(70, 229, 34))); 
+    
+    background: -o-linear-gradient(top, rgb(167, 226, 176) 0px, rgb(0, 186, 0) 50%, rgb(0, 134, 0) 51%, rgb(60, 223, 25) 85%, rgb(70, 229, 34) 100%);
+    background: -ms-linear-gradient(top, rgb(167, 226, 176) 0px, rgb(0, 186, 0) 50%, rgb(0, 134, 0) 51%, rgb(60, 223, 25) 85%, rgb(70, 229, 34) 100%);
+    background: linear-gradient(top, rgb(167, 226, 176) 0px, rgb(0, 186, 0) 50%, rgb(0, 134, 0) 51%, rgb(60, 223, 25) 85%, rgb(70, 229, 34) 100%);
+	color: #fff; /* Цвет текста */
+	border: none; /* Параметры рамки */
+	font-size: 20px;
+    border-radius: 15px; /* Радиус скругления */
+	/*box-shadow: inset 0 0 26px;*/
+	
+}
+/*input, select, button{
+	box-shadow: 0.2em 0.2em 5px rgba(122,122,122,0.5);  
+	-webkit-box-shadow:   0.2em 0.2em 5px rgba(122,122,122,0.5); *//* Для Safari и Chrome */
+	/*-moz-box-shadow:  0.2em 0.2em 5px rgba(122,122,122,0.5); /* Для Firefox */
+	
+	
+/*}*/
+	
 /*----------------------------------------------*/
 
 #product_img_list {
     min-height:350px;
 	color: #666;
-	font-family: Arial, sans-serif; /* Рубленый шрифт для текста меню */
 	font-size: 10pt; /* Размер названий в пункте меню */
 	
 }

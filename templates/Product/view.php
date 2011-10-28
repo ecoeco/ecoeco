@@ -25,6 +25,7 @@
 //
 ?>
 <div id="product_img">
+<form action="" method="post">
     <ul id="product_img_list">
         <li>
 			<a class="single_image" href="<?=$product['img_big']; ?>" title="<?= $product['name']; ?>"> <img alt="" title="<?= $product['name']; ?>" src="<?= $product['img_small']; ?>" /> </a>
@@ -54,23 +55,20 @@
 				</div>
 			</div>
 		</li>
-       
-        <form action="" method="post">
-            <li>
-                <div id="product_img_qty">
-                    Выбирете колличество:<input type="number" min="1" max="100" size="13" name="qty" value="1" />
-                </div>
-            </li>
-            <li>
-                <div id="product_img_color">
-                    Выбирете цвет:
-                    <?= $product['select_color'] ?>
-                    <input type="submit" name="quote" value="Купить" />
-                </div>
-            </li>
-        </form>
-
+		<li>
+			<div id="product_img_qty">
+				Выбирете колличество:<input type="number" min="1" max="100" size="13" name="qty" value="1" />
+			</div>
+		</li>
+		<li>
+			<div id="product_img_color">
+				Выбирете цвет:
+				<?= $product['select_color'] ?>
+				<input type="submit" name="quote" value="Купить" />
+			</div>
+		</li>
     </ul>
+</form>
 </div>
 <div id="description">
     <ul>

@@ -6,23 +6,21 @@
 		echo sprintf('<span>%s</span>', $msg_hello);
 		?></div>
 		<form action="" method="post">
-			<p>
-				<input type="submit" name='logout' value="Exit" />
-			</p>
+			<p><input type="submit" name='logout' value="Exit" /></p>
 		</form>
 	<?php else : ?>
 		<div id="login">Login</div>
 		<form action="" method="post">
 			<div><input type="text" name="username" /></div>
 			<div><input type="password" name="password" /></div>
-			<div><input type="submit" name="login" value="Enter" /></div>
+			<div align="center"><input type="submit" name="login" value="Enter" /></div>
 		</form>
 	<div id="registration">
 	<a href="index.php?action=registration" >Registration</a>
 	</div>	
 	<?php endif; ?>
 	<?php if (isset($_SESSION['auth']) && $_SESSION['activ'] === '2') : ?>
-	    <form action="index.php" method="POST">
+	    <form action="index.php" method="post">
 	        <p>
 	            <input type="submit" name='AdminEnter' value="Admin" />
 	        </p>

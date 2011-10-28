@@ -8,7 +8,7 @@ class menuController
       //  $menu->load();
 		
 		$view = new MenuView();
-        //$view->setMenu($menu);
+        //$view->set($menu);
         $view->renderHtml();
 	}
 	

@@ -7,7 +7,7 @@
 <div id="product_menu">
 	<ul>
 		<li>
-			<a style="border-bottom: 1px solid #ccc" href="index.php?gp=<?php echo $cat['group']['id_group'];?>"><b><?= $cat['group']['name'];?>:</b></a> 
+			<a style="border-bottom: 1px solid #ccc" href="index.php?gp=<?= $cat['group']['id_group'];?>"><b><?= $cat['group']['name'];?>:</b></a> 
 		</li>
 			<?php foreach ($cat['cat'] as $cat): ?>
 		<li>
@@ -17,7 +17,7 @@
 	</ul>
 </div>
 </br>
-<div id="info_int" align="center"><b>ECO Schulte <?php echo $category['title']['name']; ?></b></div>
+<div id="info_int" align="center"><b>ECO Schulte <?= $category['title']['name']; ?></b></div>
 <?php
 //
 // артинки продуктов в текущей категории

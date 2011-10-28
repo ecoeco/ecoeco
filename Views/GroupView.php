@@ -1,30 +1,18 @@
 <?php
-class GroupView
+class GroupView extends View
 {
-	private $_group;
-
-    function setGroup($group)
-    {
-        $this->_group = $group;
-        return $this;
-    }
 	
-    function getGroupData()
-    {
-        return $this->_group
-		->getData();
-    }
 
     function renderHtml()
     {
-		$group = $this->getGroupData();
+		$group = $this->getViewData();
 		if (isset($_GET['gp']))
 		{
-			include_once '/templates/Group/view.php';
+			include_once 'templates/Group/view.php';
 		}
 		else 
 		{
-			include_once '/templates/Group/viewImg.php';
+			include_once 'templates/Group/viewImg.php';
 		}
 		
 		

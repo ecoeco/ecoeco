@@ -1,7 +1,7 @@
 <?php
 class ProductModel
 {
-    public $_data;
+	public $_data;
 	
 	//
 	//Текущий продукт

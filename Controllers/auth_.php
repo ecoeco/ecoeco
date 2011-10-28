@@ -32,19 +32,19 @@ if (isset ($_POST['login']))
     
 	logout();
 }
-
+/*
 if (isset($_POST['login_reg']) && isset ($_POST['username_reg']) && isset($_POST['e_mail_reg'])) {
 $_POST['username_reg'] = mysql_real_escape_string ($_POST['username_reg']);
 $_POST['e_mail_reg'] = mysql_real_escape_string ($_POST['e_mail_reg']);
 $_POST['password_reg'] = mysql_real_escape_string ($_POST['password_reg']);
 $_POST['repeat_password_reg'] = mysql_real_escape_string ($_POST['repeat_password_reg']);
     login_reg($_POST['username_reg'], $_POST['e_mail_reg'], $_POST['password_reg'], $_POST['repeat_password_reg']);
-	/*echo $_POST['password_reg'];
-	$result = mysql_query("INSERT INTO users (login, password)
-    VALUES ('{$_POST['username_reg']}', '{$_POST['password_reg']}')")or die("Invalid query: " . mysql_error());*/
+	//echo $_POST['password_reg'];
+	//$result = mysql_query("INSERT INTO users (login, password)
+    //VALUES ('{$_POST['username_reg']}', '{$_POST['password_reg']}')")or die("Invalid query: " . mysql_error());
 } elseif ($_POST['logout']) {
     logout();
-}
+}*/
 
 	
 	//
@@ -55,8 +55,8 @@ $_POST['repeat_password_reg'] = mysql_real_escape_string ($_POST['repeat_passwor
 		if (isset($_SESSION['username']) && isset ($_POST['color']) && $_POST['color'] != '0')
 		{
 			$id = intval ($_GET['id']);
-			require_once '/Model/ProductModel.php';
-			require_once '/Model/CreateQuoteModel.php';
+			require_once 'Model/ProductModel.php';
+			require_once 'Model/CreateQuoteModel.php';
 			$product = new ProductModel();
 			$product->load($id);
 			$quote= new CreateQuoteModel();
@@ -69,9 +69,9 @@ $_POST['repeat_password_reg'] = mysql_real_escape_string ($_POST['repeat_passwor
 			$_SESSION['msg'] = 'Вы не зарегестрированны!';
 		}
 		
-		elseif ($_POST['qty'] < '0')
+		elseif ($_POST['qty'] <= '0')
 		{
-			$_SESSION['msg'] = 'Колличество < 0';
+			$_SESSION['msg'] = 'Колличество должно быть больше 0';
 		}
 		elseif (!isset ($_POST['color']))
 		{
