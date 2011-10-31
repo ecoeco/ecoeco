@@ -32,19 +32,7 @@ if (isset ($_POST['login']))
     
 	logout();
 }
-/*
-if (isset($_POST['login_reg']) && isset ($_POST['username_reg']) && isset($_POST['e_mail_reg'])) {
-$_POST['username_reg'] = mysql_real_escape_string ($_POST['username_reg']);
-$_POST['e_mail_reg'] = mysql_real_escape_string ($_POST['e_mail_reg']);
-$_POST['password_reg'] = mysql_real_escape_string ($_POST['password_reg']);
-$_POST['repeat_password_reg'] = mysql_real_escape_string ($_POST['repeat_password_reg']);
-    login_reg($_POST['username_reg'], $_POST['e_mail_reg'], $_POST['password_reg'], $_POST['repeat_password_reg']);
-	//echo $_POST['password_reg'];
-	//$result = mysql_query("INSERT INTO users (login, password)
-    //VALUES ('{$_POST['username_reg']}', '{$_POST['password_reg']}')")or die("Invalid query: " . mysql_error());
-} elseif ($_POST['logout']) {
-    logout();
-}*/
+
 
 	
 	//

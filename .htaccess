@@ -27,7 +27,9 @@ DirectoryIndex index.php
 
 # Override PHP settings. More in sites/default/settings.php
 # but the following cannot be changed at runtime.
-
+php_flag magic_quotes_gpc Off
+php_flag magic_quotes_runtime Off
+php_flag magic_quotes_sybase Off
 # PHP 4, Apache 1.
 <IfModule mod_php4.c>
   php_value magic_quotes_gpc                0

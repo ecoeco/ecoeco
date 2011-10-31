@@ -120,11 +120,14 @@ class QuoteModel
 			foreach($_POST['item'] as $key_quote => $item) 
 			{
 				$key_quote = intval($key_quote);
-				var_dump($item);
 				$item["'color'"] = mysql_real_escape_string ($item["'color'"]);
 				
 				$item["'qty'"] = intval($item["'qty'"]);
-				
+				if ($item["'qty'"]<=0)
+				{
+					$_SESSION['msg']= 'Колличество должно быть больше 0';
+					return false;
+				}
 					$sql=sprintf(
 						"UPDATE quote_item
 						SET color = '%s',

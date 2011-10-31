@@ -38,7 +38,7 @@
 					</td>
 					<td><?= $quote_item['price'] . '  ˆ ' ; ?> </td>
 					<td>
-						<p><input type="number" value="<?= $quote_item['qty']; ?>" size="12" name="item[<?= $quote_item['id_quote_item']; ?>]['qty']" min="0" max="1000" value="1" /></p>
+						<p><input type="number" value="<?= $quote_item['qty']; ?>" size="12" name="item[<?= $quote_item['id_quote_item']; ?>]['qty']" min="1" max="1000" value="1" /></p>
 					</td>
 					
 					<td>Êמכ-גמ: <?= $quote_item['qty']; ?> רע.
